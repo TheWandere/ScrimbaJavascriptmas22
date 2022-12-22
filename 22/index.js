@@ -3,19 +3,14 @@ function getReadyTables() {
     for (let i = 0; i < 2; i++) {
         readyTables.push(Math.round(Math.random()*20) + 1)
     }
-    
-    return readyTables;
+    return readyTables
 }
 
-function displayTables() {
-    const readyTables = getReadyTables();
-       return readyTables.map(table => {
-          document.getElementById("tables").innerHTML += `<div class="table"> ${table}</div>`;
-       })
-   }
+let displayTables = () => {
+    return getReadyTables().map(rT => `<div class="table">${rT}</div>`)
+}
 
-
-displayTables()
+document.getElementById('tables').innerHTML=displayTables()
 
 /* Challenge 3: Ready Tables
 - Topic: Return a Function
